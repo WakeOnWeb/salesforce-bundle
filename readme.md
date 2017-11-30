@@ -1,47 +1,29 @@
-PHP Salesforce client
+PHP Salesforce bundle
 =====================
 
-Supported technologies:
+Symfony integration of salesforce-client.
 
-    - rest
-        - oauth2 grant type: password.
+Definition
+---------
 
-Please, contribute to support other one.
+```
+wakeonweb_salesforce:
+    host: '%salesforce.host%'
+    version: '%salesforce.version%'
+    oauth:
+        password_strategy:
+            consumer_key: '%salesforce.consumer_key%'
+            consumer_secret: '%salesforce.consumer_secret%'
+            login: '%salesforce.login%'
+            password: '%salesforce.password%'
+            security_token: '%salesforce.security_token%'
+```
 
 Usage
 -----
 
 ```
-use WakeOnWeb\SalesforceClient\REST;
-use WakeOnWeb\SalesforceClient\ClientInterface;
-
-$client = new REST\Client(
-    new REST\Gateway('https://cs81.salesforce.com', '41.0'),
-    new REST\GrantType\PasswordStrategy(
-        'consumer_key',
-        'consumer_secret',
-        'login',
-        'password',
-        'security_token'
-    )
-);
-
-// Available methods
-
-$client->getAvailableResources();
-$client->getAllObjects();
-$client->describeObjectMetadata('Account');
-
-$client->createObject( 'Account', ['name' => 'Chuck Norrs'] );
-$client->patchObject( 'Account', '1337ID', ['name' => 'Chuck Norris'] ));
-$client->getObject( 'Account', '1337ID')); // all fields
-$client->getObject( 'Account', '1337ID', ['Name', 'OwnerId', 'CreatedAt'] )); // specific fields
-$client->deleteObject( 'Account', '1337ID'));
-client->searchSOQL('SELECT name from Account'); // NOT_ALL by default.
-client->searchSOQL('SELECT name from Account', ClientInterface::ALL);
+$client = $container->get('wow.salesforce.client');
+// see salesforce-client api.
+//$client-> ...
 ```
-
-Missing
--------
-
-- tests
