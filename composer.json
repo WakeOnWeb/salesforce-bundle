@@ -1,0 +1,26 @@
+{
+  "name": "wakeonweb/salesforce-bundle",
+  "type": "symfony-bundle",
+  "description": "WakeOnWeb Salesforce bundle",
+  "keywords": [
+    "salesforce",
+    "symfony"
+  ],
+  "homepage": "https://github.com/wakeonweb/salesforce-bundle",
+  "license": "MIT",
+  "authors": [{
+      "name": "Community contributors",
+      "homepage": "https://github.com/wakeonweb/salesforce-bundle/contributors"
+  }],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.0",
+    "symfony/framework-bundle": ">=3.0,<5.0",
+    "wakeonweb/salesforce-client": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "WakeOnWeb\\SalesforceBundle\\": "src"
+    }
+  }
+}
