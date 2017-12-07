@@ -29,7 +29,7 @@ class WakeonwebSalesforceExtension extends Extension
         $authStrategyConfig = $config['oauth']['password_strategy'];
 
         $gatewayDefinition = new Definition(Gateway::class, [$config['host'], $config['version']]);
-        $authDefinition = new Definition(PasswordStartegy::class, [
+        $authDefinition = new Definition(PasswordStrategy::class, [
             $authStrategyConfig['consumer_key'],
             $authStrategyConfig['consumer_secret'],
             $authStrategyConfig['login'],
