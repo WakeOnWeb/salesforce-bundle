@@ -1,7 +1,7 @@
 PHP Salesforce bundle
 =====================
 
-Symfony integration of salesforce-client.
+Symfony integration of [salesforce-client](https://github.com/WakeOnWeb/salesforce-client).
 
 Definition
 ---------
