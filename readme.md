@@ -6,7 +6,7 @@ Symfony integration of [salesforce-client](https://github.com/WakeOnWeb/salesfor
 Definition
 ---------
 
-```
+```yaml
 wakeonweb_salesforce:
     host: '%salesforce.host%'
     version: '%salesforce.version%'
@@ -22,7 +22,7 @@ wakeonweb_salesforce:
 Usage
 -----
 
-```
+```php
 $client = $container->get('wow.salesforce.client');
 // see salesforce-client api.
 //$client-> ...
