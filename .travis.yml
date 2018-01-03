@@ -1,0 +1,14 @@
+language: php
+
+dist: trusty
+sudo: false
+
+php:
+    - 7.0
+    - 7.1
+
+before_script:
+    - composer install --optimize-autoloader --prefer-dist
+
+script:
+    - vendor/bin/phpunit tests

@@ -3,6 +3,8 @@ PHP Salesforce bundle
 
 Symfony integration of [salesforce-client](https://github.com/WakeOnWeb/salesforce-client).
 
+[![Build Status](https://api.travis-ci.org/WakeOnWeb/salesforce-bundle.svg)](https://travis-ci.org/WakeOnWeb/salesforce-bundle)
+
 Definition
 ---------
 
