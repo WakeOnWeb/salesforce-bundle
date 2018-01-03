@@ -9,7 +9,7 @@ use WakeOnWeb\SalesforceBundle\DependencyInjection\Configuration as SUT;
 class ConfigurationTest extends TestCase
 {
     /**
-     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
      * @expectedExceptionMessage The child node "host" at path "wakeonweb_salesforce" must be configured.
      */
     public function test_with_no_configuration()
@@ -32,7 +32,6 @@ class ConfigurationTest extends TestCase
                 ],
             ],
         ];
-
 
         $this->assertEquals(
             (new Processor())->processConfiguration(new SUT(), [$config]),

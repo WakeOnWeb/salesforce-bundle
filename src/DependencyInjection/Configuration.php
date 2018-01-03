@@ -14,7 +14,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $tb       = new TreeBuilder();
+        $tb = new TreeBuilder();
         $rootNode = $tb->root('wakeonweb_salesforce');
 
         $rootNode
