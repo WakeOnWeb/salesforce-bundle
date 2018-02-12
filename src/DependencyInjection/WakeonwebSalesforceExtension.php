@@ -6,6 +6,7 @@ namespace WakeOnWeb\SalesforceBundle\DependencyInjection;
 use Symfony\Component\Config\Definition\Processor;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
+use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use WakeOnWeb\SalesforceClient\REST\Gateway;
 use WakeOnWeb\SalesforceClient\REST\Client;
@@ -31,6 +32,12 @@ class WakeonwebSalesforceExtension extends Extension
             $authStrategyConfig['security_token'],
         ]);
 
-        $container->setDefinition('wow.salesforce.client', new Definition(Client::class, [$gatewayDefinition, $authDefinition]));
+        $container->setDefinition('wow.salesforce.client', new Definition(
+            Client::class, [
+                $gatewayDefinition,
+                $authDefinition,
+                $config['guzzle_client'] ? new Reference($config['guzzle_client']) : null,
+            ]
+        ));
     }
 }

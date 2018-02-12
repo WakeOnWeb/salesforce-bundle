@@ -19,6 +19,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->scalarNode('guzzle_client')->defaultNull()->end()
                 ->scalarNode('host')->cannotBeEmpty()->isRequired()->end()
                 ->scalarNode('version')->cannotBeEmpty()->isRequired()->end()
                 ->arrayNode('oauth')
